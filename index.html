@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Saintsbury - Klaviyo Dashboard</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #ffffff; color: #1e293b; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 14px; line-height: 1.5; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 24px 20px; }
+  h1 { font-size: 22px; font-weight: 700; color: #0f172a; }
+  h2 { font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #e2e8f0; }
+  .subtitle { color: #64748b; font-size: 13px; margin-top: 2px; }
+  .cards { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 32px; }
+  .card { background: #f8fafc; border-radius: 10px; padding: 20px 24px; flex: 1; min-width: 160px; border: 1px solid #e2e8f0; }
+  .card-label { color: #64748b; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+  .card-value { font-size: 26px; font-weight: 700; color: #0f172a; }
+  .card-sub { color: #94a3b8; font-size: 12px; margin-top: 4px; }
+  .section { margin-bottom: 36px; }
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; color: #94a3b8; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; padding: 8px 10px; border-bottom: 1px solid #e2e8f0; }
+  td { padding: 10px 10px; border-bottom: 1px solid #f1f5f9; color: #334155; }
+  tr:hover td { background: #f8fafc; }
+  .flow-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+  .badge-green { background: #dcfce7; color: #16a34a; }
+  .badge-yellow { background: #fef9c3; color: #ca8a04; }
+  .badge-red { background: #fee2e2; color: #dc2626; }
+  .legend { display: flex; gap: 16px; font-size: 12px; color: #64748b; margin-bottom: 12px; }
+  .legend span { display: flex; align-items: center; gap: 4px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:28px">
+    <div>
+      <h1>Saintsbury - Email Dashboard</h1>
+      <div class="subtitle">Klaviyo - Generated March 31, 2026</div>
+    </div>
+    <div style="text-align:right;color:#94a3b8;font-size:12px">
+      <div>7 campaigns tracked</div>
+      <div>5 live flows</div>
+    </div>
+  </div>
+
+  <!-- Overview Cards -->
+  <div class="cards">
+    <div class="card">
+      <div class="card-label">Total Email Revenue</div>
+      <div class="card-value">$8,917</div>
+      <div class="card-sub">Campaigns + Flows (last 30d)</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Campaign Revenue</div>
+      <div class="card-value">$8,517</div>
+      <div class="card-sub">Last 30 days</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Flow Revenue</div>
+      <div class="card-value">$400</div>
+      <div class="card-sub">Last 30 days</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Avg Open Rate</div>
+      <div class="card-value">61.2%</div>
+      <div class="card-sub">Across all campaigns</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Avg Click Rate</div>
+      <div class="card-value">2.3%</div>
+      <div class="card-sub">Across all campaigns</div>
+    </div>
+  </div>
+
+  <!-- Campaign Performance -->
+  <div class="section">
+    <h2>Campaign Performance <span style="color:#64748b;font-size:12px;font-weight:400">(last 30 days)</span></h2>
+    <div class="legend">
+      <span><span class="dot" style="background:#22c55e"></span> Open &gt;35% / Click &gt;3%</span>
+      <span><span class="dot" style="background:#eab308"></span> Open 25-35% / Click 1.5-3%</span>
+      <span><span class="dot" style="background:#ef4444"></span> Open &lt;25% / Click &lt;1.5%</span>
+    </div>
+    <div style="overflow-x:auto">
+      <table>
+        <thead>
+          <tr>
+            <th>Campaign</th>
+            <th style="text-align:center">Send Date</th>
+            <th style="text-align:right">Recipients</th>
+            <th style="text-align:right">Open %</th>
+            <th style="text-align:right">Click %</th>
+            <th style="text-align:right">Unsub %</th>
+            <th style="text-align:right">Revenue</th>
+            <th style="text-align:right">Orders</th>
+            <th style="text-align:right">AOV</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        <tr>
+          <td style="max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Industry Party Invite">Industry Party Invite</td>
+          <td style="text-align:center;color:#94a3b8">2026-03-25</td>
+          <td style="text-align:right">208</td>
+          <td style="text-align:right;color:#22c55e;font-weight:600">66.3%</td>
+          <td style="text-align:right;color:#22c55e;font-weight:600">15.3%</td>
+          <td style="text-align:right;color:#eab308">0.5%</td>
+          <td style="text-align:right;color:#22c55e;font-weight:600">-</td>
+          <td style="text-align:right;color:#94a3b8">11</td>
+          <td style="text-align:right;color:#64748b">-</td>
+        </tr>
+        <tr>
+          <td style="max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Email 1">Email 1</td>
+          <td style="text-align:center;color:#94a3b8">2026-03-25</td>
+          <td style="text-align:right">33</td>
+          <td style="text-align:right;color:#22c55e;font-weight:600">66.7%</td>
+          <td style="text-align:right;color:#22c55e;font-weight:600">24.2%</td>
+          <td style="text-align:right;color:#22c55e">0.0%</td>
+          <td style="text-align:right;color:#22c55e;font-weight:600">-</td>
+          <td style="text-align:right;color:#94a3b8">4</td>
+          <td style="text-align:right;color:#64748b">-</td>
+        </tr>
+        <tr>
+          <td style="max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Non-Member Remarketing">Non-Member Remarketing</td>
+          <td style="text-align:center;color:#94a3b8">2026-03-20</td>
+          <td style="text-align:right">6,181</td>
+          <td style="text-align:right;color:#22c55e;font-weight:600">89.5%</td>
+          <td style="text-align:right;color:#22c55e;font-weight:600">3.7%</td>
+          <td style="text-align:right;color:#eab308">0.2%</td>
+          <td style="text-align:right;color:#22c55e;font-weight:600">$485</td>
+          <td style="text-align:right;color:#94a3b8">2</td>
+          <td style="text-align:right;color:#64748b">$243</td>
+        </tr>
+        <tr>
+          <td style="max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Email 2">Email 2</td>
+          <td style="text-align:center;color:#94a3b8">2026-03-19</td>
+          <td style="text-align:right">1,442</td>
+          <td style="text-align:right;color:#22c55e;font-weight:600">62.0%</td>
+          <td style="text-align:right;color:#22c55e;font-weight:600">4.7%</td>
+          <td style="text-align:right;color:#22c55e">0.1%</td>
+          <td style="text-align:right;color:#22c55e;font-weight:600">$1,071</td>
+          <td style="text-align:right;color:#94a3b8">3</td>
+          <td style="text-align:right;color:#64748b">$357</td>
+        </tr>
+        <tr>
+          <td style="max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Non-Member Rosé Launch">Non-Member Rosé Launch</td>
+          <td style="text-align:center;color:#94a3b8">2026-03-18</td>
+          <td style="text-align:right">13,520</td>
+          <td style="text-align:right;color:#22c55e;font-weight:600">48.0%</td>
+          <td style="text-align:right;color:#ef4444;font-weight:600">1.1%</td>
+          <td style="text-align:right;color:#eab308">0.4%</td>
+          <td style="text-align:right;color:#22c55e;font-weight:600">$2,724</td>
+          <td style="text-align:right;color:#94a3b8">11</td>
+          <td style="text-align:right;color:#64748b">$248</td>
+        </tr>
+        <tr>
+          <td style="max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Member Rosé Launch">Member Rosé Launch</td>
+          <td style="text-align:center;color:#94a3b8">2026-03-17</td>
+          <td style="text-align:right">1,445</td>
+          <td style="text-align:right;color:#22c55e;font-weight:600">61.6%</td>
+          <td style="text-align:right;color:#eab308;font-weight:600">2.8%</td>
+          <td style="text-align:right;color:#22c55e">0.0%</td>
+          <td style="text-align:right;color:#22c55e;font-weight:600">$4,236</td>
+          <td style="text-align:right;color:#94a3b8">12</td>
+          <td style="text-align:right;color:#64748b">$353</td>
+        </tr>
+        <tr>
+          <td style="max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Non-Member Launch">Non-Member Launch</td>
+          <td style="text-align:center;color:#94a3b8">2026-03-17</td>
+          <td style="text-align:right">1</td>
+          <td style="text-align:right;color:#22c55e;font-weight:600">100.0%</td>
+          <td style="text-align:right;color:#ef4444;font-weight:600">0.0%</td>
+          <td style="text-align:right;color:#22c55e">0.0%</td>
+          <td style="text-align:right;color:#22c55e;font-weight:600">-</td>
+          <td style="text-align:right;color:#94a3b8">-</td>
+          <td style="text-align:right;color:#64748b">-</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Flows -->
+  <div class="section">
+    <h2>Flow Performance <span style="color:#64748b;font-size:12px;font-weight:400">(last 30 days)</span></h2>
+    <div class="flow-grid">
+      
+        <div style="background:#f8fafc;border-radius:10px;padding:20px;border:1px solid #e2e8f0">
+          <div style="font-weight:700;font-size:15px;margin-bottom:16px;color:#0f172a">Welcome Series - SMS Pop-Up Subscription</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <div style="color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.5px">Sent (30d)</div>
+              <div style="font-size:20px;font-weight:700;color:#0f172a;margin-top:2px">0</div>
+            </div>
+            <div>
+              <div style="color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.5px">Revenue</div>
+              <div style="font-size:20px;font-weight:700;color:#22c55e;margin-top:2px">$228</div>
+            </div>
+            <div>
+              <div style="color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.5px">Open Rate</div>
+              <div style="font-size:18px;font-weight:700;color:#ef4444;margin-top:2px">0.0%</div>
+              <div style="background:#e2e8f0;border-radius:3px;height:6px;margin-top:4px"><div style="background:#ef4444;width:0%;height:6px;border-radius:3px"></div></div>
+            </div>
+            <div>
+              <div style="color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.5px">Click Rate</div>
+              <div style="font-size:18px;font-weight:700;color:#ef4444;margin-top:2px">0.0%</div>
+              <div style="background:#e2e8f0;border-radius:3px;height:6px;margin-top:4px"><div style="background:#ef4444;width:0%;height:6px;border-radius:3px"></div></div>
+            </div>
+          </div>
+          <div style="margin-top:12px;color:#64748b;font-size:12px">Orders: <span style="color:#0f172a">1</span></div>
+          <div style="margin-top:4px;color:#64748b;font-size:12px">Rev/recipient: <span style="color:#0f172a">$22.80</span></div>
+        </div>
+        <div style="background:#f8fafc;border-radius:10px;padding:20px;border:1px solid #e2e8f0">
+          <div style="font-weight:700;font-size:15px;margin-bottom:16px;color:#0f172a">Abandoned Checkout Email</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <div style="color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.5px">Sent (30d)</div>
+              <div style="font-size:20px;font-weight:700;color:#0f172a;margin-top:2px">36</div>
+            </div>
+            <div>
+              <div style="color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.5px">Revenue</div>
+              <div style="font-size:20px;font-weight:700;color:#22c55e;margin-top:2px">$110</div>
+            </div>
+            <div>
+              <div style="color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.5px">Open Rate</div>
+              <div style="font-size:18px;font-weight:700;color:#22c55e;margin-top:2px">72.2%</div>
+              <div style="background:#e2e8f0;border-radius:3px;height:6px;margin-top:4px"><div style="background:#22c55e;width:100%;height:6px;border-radius:3px"></div></div>
+            </div>
+            <div>
+              <div style="color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.5px">Click Rate</div>
+              <div style="font-size:18px;font-weight:700;color:#22c55e;margin-top:2px">5.6%</div>
+              <div style="background:#e2e8f0;border-radius:3px;height:6px;margin-top:4px"><div style="background:#22c55e;width:100%;height:6px;border-radius:3px"></div></div>
+            </div>
+          </div>
+          <div style="margin-top:12px;color:#64748b;font-size:12px">Orders: <span style="color:#0f172a">1</span></div>
+          <div style="margin-top:4px;color:#64748b;font-size:12px">Rev/recipient: <span style="color:#0f172a">$3.05</span></div>
+        </div>
+        <div style="background:#f8fafc;border-radius:10px;padding:20px;border:1px solid #e2e8f0">
+          <div style="font-weight:700;font-size:15px;margin-bottom:16px;color:#0f172a">Welcome Flow - Purchase Flow</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <div style="color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.5px">Sent (30d)</div>
+              <div style="font-size:20px;font-weight:700;color:#0f172a;margin-top:2px">208</div>
+            </div>
+            <div>
+              <div style="color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.5px">Revenue</div>
+              <div style="font-size:20px;font-weight:700;color:#22c55e;margin-top:2px">$62</div>
+            </div>
+            <div>
+              <div style="color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.5px">Open Rate</div>
+              <div style="font-size:18px;font-weight:700;color:#22c55e;margin-top:2px">55.3%</div>
+              <div style="background:#e2e8f0;border-radius:3px;height:6px;margin-top:4px"><div style="background:#22c55e;width:100%;height:6px;border-radius:3px"></div></div>
+            </div>
+            <div>
+              <div style="color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.5px">Click Rate</div>
+              <div style="font-size:18px;font-weight:700;color:#22c55e;margin-top:2px">3.9%</div>
+              <div style="background:#e2e8f0;border-radius:3px;height:6px;margin-top:4px"><div style="background:#22c55e;width:100%;height:6px;border-radius:3px"></div></div>
+            </div>
+          </div>
+          <div style="margin-top:12px;color:#64748b;font-size:12px">Orders: <span style="color:#0f172a">1</span></div>
+          <div style="margin-top:4px;color:#64748b;font-size:12px">Rev/recipient: <span style="color:#0f172a">$1.35</span></div>
+        </div>
+        <div style="background:#f8fafc;border-radius:10px;padding:20px;border:1px solid #e2e8f0">
+          <div style="font-weight:700;font-size:15px;margin-bottom:16px;color:#0f172a">Welcome Series - Membership Flow</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <div style="color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.5px">Sent (30d)</div>
+              <div style="font-size:20px;font-weight:700;color:#0f172a;margin-top:2px">67</div>
+            </div>
+            <div>
+              <div style="color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.5px">Revenue</div>
+              <div style="font-size:20px;font-weight:700;color:#22c55e;margin-top:2px">N/A</div>
+            </div>
+            <div>
+              <div style="color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.5px">Open Rate</div>
+              <div style="font-size:18px;font-weight:700;color:#22c55e;margin-top:2px">62.6%</div>
+              <div style="background:#e2e8f0;border-radius:3px;height:6px;margin-top:4px"><div style="background:#22c55e;width:100%;height:6px;border-radius:3px"></div></div>
+            </div>
+            <div>
+              <div style="color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.5px">Click Rate</div>
+              <div style="font-size:18px;font-weight:700;color:#22c55e;margin-top:2px">6.9%</div>
+              <div style="background:#e2e8f0;border-radius:3px;height:6px;margin-top:4px"><div style="background:#22c55e;width:100%;height:6px;border-radius:3px"></div></div>
+            </div>
+          </div>
+          
+          
+        </div>
+        <div style="background:#f8fafc;border-radius:10px;padding:20px;border:1px solid #e2e8f0">
+          <div style="font-weight:700;font-size:15px;margin-bottom:16px;color:#0f172a">Welcome Series - Web flow</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <div style="color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.5px">Sent (30d)</div>
+              <div style="font-size:20px;font-weight:700;color:#0f172a;margin-top:2px">350</div>
+            </div>
+            <div>
+              <div style="color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.5px">Revenue</div>
+              <div style="font-size:20px;font-weight:700;color:#22c55e;margin-top:2px">N/A</div>
+            </div>
+            <div>
+              <div style="color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.5px">Open Rate</div>
+              <div style="font-size:18px;font-weight:700;color:#22c55e;margin-top:2px">61.3%</div>
+              <div style="background:#e2e8f0;border-radius:3px;height:6px;margin-top:4px"><div style="background:#22c55e;width:100%;height:6px;border-radius:3px"></div></div>
+            </div>
+            <div>
+              <div style="color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.5px">Click Rate</div>
+              <div style="font-size:18px;font-weight:700;color:#22c55e;margin-top:2px">3.0%</div>
+              <div style="background:#e2e8f0;border-radius:3px;height:6px;margin-top:4px"><div style="background:#22c55e;width:100%;height:6px;border-radius:3px"></div></div>
+            </div>
+          </div>
+          <div style="margin-top:12px;color:#64748b;font-size:12px">Orders: <span style="color:#0f172a">1</span></div>
+          
+        </div>
+    </div>
+  </div>
+
+  <!-- Top campaigns by revenue -->
+  <div class="section">
+    <h2>Top Campaigns by Revenue</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Campaign</th>
+          <th style="text-align:right">Revenue</th>
+          <th style="text-align:right">Orders</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr>
+          <td style="color:#64748b;width:30px">1</td>
+          <td style="max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Member Rosé Launch</td>
+          <td style="text-align:right;color:#22c55e;font-weight:700">$4,236</td>
+          <td style="text-align:right;color:#94a3b8">12</td>
+        </tr>
+        <tr>
+          <td style="color:#64748b;width:30px">2</td>
+          <td style="max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Non-Member Rosé Launch</td>
+          <td style="text-align:right;color:#22c55e;font-weight:700">$2,724</td>
+          <td style="text-align:right;color:#94a3b8">11</td>
+        </tr>
+        <tr>
+          <td style="color:#64748b;width:30px">3</td>
+          <td style="max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Email 2</td>
+          <td style="text-align:right;color:#22c55e;font-weight:700">$1,071</td>
+          <td style="text-align:right;color:#94a3b8">3</td>
+        </tr>
+        <tr>
+          <td style="color:#64748b;width:30px">4</td>
+          <td style="max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Non-Member Remarketing</td>
+          <td style="text-align:right;color:#22c55e;font-weight:700">$485</td>
+          <td style="text-align:right;color:#94a3b8">2</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+  <!-- Instagram divider -->
+  <div style="border-top:2px solid #e2e8f0;margin:40px 0 32px">
+    <h1 style="margin-top:24px;display:flex;align-items:center;gap:10px">
+      Instagram
+      <span style="font-size:14px;font-weight:400;color:#64748b">@saintsburywinery - last 30 days</span>
+    </h1>
+  </div>
+
+  
+  <div class="cards">
+    <div class="card">
+      <div class="card-label">Followers</div>
+      <div class="card-value">4,500</div>
+      <div class="card-sub">@saintsburywinery</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Avg Likes</div>
+      <div class="card-value">64</div>
+      <div class="card-sub">Last 30 days</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Avg Comments</div>
+      <div class="card-value">2.2</div>
+      <div class="card-sub">Last 30 days</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Avg Engagement</div>
+      <div class="card-value">1.48%</div>
+      <div class="card-sub">Likes + comments / followers</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Posts / Week</div>
+      <div class="card-value">2.3</div>
+      <div class="card-sub">5 Videos / 3 Sidecars</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Recent Posts</h2>
+    <div style="overflow-x:auto">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Type</th>
+            <th style="text-align:right">Likes</th>
+            <th style="text-align:right">Comments</th>
+            <th style="text-align:right">Views</th>
+            <th style="text-align:right">Eng %</th>
+            <th>Caption</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td style="color:#94a3b8">2026-03-27</td>
+          <td style="color:#64748b;font-size:12px">Video</td>
+          <td style="text-align:right;font-weight:600">35</td>
+          <td style="text-align:right">6</td>
+          <td style="text-align:right;color:#64748b">108</td>
+          <td style="text-align:right;color:#dc2626;font-weight:600">0.91%</td>
+          <td style="color:#64748b;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Exploring Saintsbury’s newest vineyard 👀"><a href="https://www.instagram.com/p/DWZuyiVCYJY/" target="_blank" style="color:#0ea5e9;text-decoration:none">Exploring Saintsbury’s newest vineyard 👀</a></td>
+        </tr>
+        <tr>
+          <td style="color:#94a3b8">2026-03-25</td>
+          <td style="color:#64748b;font-size:12px">Sidecar</td>
+          <td style="text-align:right;font-weight:600">62</td>
+          <td style="text-align:right">2</td>
+          <td style="text-align:right;color:#64748b">-</td>
+          <td style="text-align:right;color:#ca8a04;font-weight:600">1.42%</td>
+          <td style="color:#64748b;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="How to stay cool in St. Helena on an 81 degree day in March 🥵  1️⃣ Order a roast..."><a href="https://www.instagram.com/p/DWUmB7NElpB/" target="_blank" style="color:#0ea5e9;text-decoration:none">How to stay cool in St. Helena on an 81 degree day in March 🥵  1️⃣ Order a roast...</a></td>
+        </tr>
+        <tr>
+          <td style="color:#94a3b8">2026-03-13</td>
+          <td style="color:#64748b;font-size:12px">Video</td>
+          <td style="text-align:right;font-weight:600">54</td>
+          <td style="text-align:right">1</td>
+          <td style="text-align:right;color:#64748b">496</td>
+          <td style="text-align:right;color:#ca8a04;font-weight:600">1.22%</td>
+          <td style="color:#64748b;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Scenes from last week’s Garden Opening Weekend 🪴  🧀 rosettes of cheese with pime..."><a href="https://www.instagram.com/p/DV12WqugXnj/" target="_blank" style="color:#0ea5e9;text-decoration:none">Scenes from last week’s Garden Opening Weekend 🪴  🧀 rosettes of cheese with pime...</a></td>
+        </tr>
+        <tr>
+          <td style="color:#94a3b8">2026-03-25</td>
+          <td style="color:#64748b;font-size:12px">Sidecar</td>
+          <td style="text-align:right;font-weight:600">47</td>
+          <td style="text-align:right">1</td>
+          <td style="text-align:right;color:#64748b">-</td>
+          <td style="text-align:right;color:#ca8a04;font-weight:600">1.07%</td>
+          <td style="color:#64748b;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="It’s rose 🌹 season in the Garden and everything is in bloom:  Orange blossom 🍊 M..."><a href="https://www.instagram.com/p/DWSXmZWCQc9/" target="_blank" style="color:#0ea5e9;text-decoration:none">It’s rose 🌹 season in the Garden and everything is in bloom:  Orange blossom 🍊 M...</a></td>
+        </tr>
+        <tr>
+          <td style="color:#94a3b8">2026-03-20</td>
+          <td style="color:#64748b;font-size:12px">Sidecar</td>
+          <td style="text-align:right;font-weight:600">155</td>
+          <td style="text-align:right">1</td>
+          <td style="text-align:right;color:#64748b">-</td>
+          <td style="text-align:right;color:#16a34a;font-weight:600">3.47%</td>
+          <td style="color:#64748b;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Just add oysters 🦪, caviar, crudo 🍣, chips, and a lobster roll 🦞…  Vin Gris is c..."><a href="https://www.instagram.com/p/DWFzmm6lOCW/" target="_blank" style="color:#0ea5e9;text-decoration:none">Just add oysters 🦪, caviar, crudo 🍣, chips, and a lobster roll 🦞…  Vin Gris is c...</a></td>
+        </tr>
+        <tr>
+          <td style="color:#94a3b8">2026-03-03</td>
+          <td style="color:#64748b;font-size:12px">Video</td>
+          <td style="text-align:right;font-weight:600">30</td>
+          <td style="text-align:right">0</td>
+          <td style="text-align:right;color:#64748b">183</td>
+          <td style="text-align:right;color:#dc2626;font-weight:600">0.67%</td>
+          <td style="color:#64748b;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Now in bloom 💐 in the Saintsbury Garden:  🌼 Roldana 🌹 French roses 🌱 Geranium ♥️..."><a href="https://www.instagram.com/p/DVZ7RGdibl3/" target="_blank" style="color:#0ea5e9;text-decoration:none">Now in bloom 💐 in the Saintsbury Garden:  🌼 Roldana 🌹 French roses 🌱 Geranium ♥️...</a></td>
+        </tr>
+        <tr>
+          <td style="color:#94a3b8">2026-03-17</td>
+          <td style="color:#64748b;font-size:12px">Video</td>
+          <td style="text-align:right;font-weight:600">60</td>
+          <td style="text-align:right">3</td>
+          <td style="text-align:right;color:#64748b">477</td>
+          <td style="text-align:right;color:#ca8a04;font-weight:600">1.40%</td>
+          <td style="color:#64748b;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="It’s back ‼️ Our 2025 Vin Gris Rosé of Pinot Noir is available online and in the..."><a href="https://www.instagram.com/p/DV_toI7Cbjr/" target="_blank" style="color:#0ea5e9;text-decoration:none">It’s back ‼️ Our 2025 Vin Gris Rosé of Pinot Noir is available online and in the...</a></td>
+        </tr>
+        <tr>
+          <td style="color:#94a3b8">2026-03-15</td>
+          <td style="color:#64748b;font-size:12px">Video</td>
+          <td style="text-align:right;font-weight:600">72</td>
+          <td style="text-align:right">4</td>
+          <td style="text-align:right;color:#64748b">680</td>
+          <td style="text-align:right;color:#ca8a04;font-weight:600">1.69%</td>
+          <td style="color:#64748b;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="⛷️ What pairs with spring skiing and long sunny days ???  Our most anticipated r..."><a href="https://www.instagram.com/p/DV4pN0Jj9TB/" target="_blank" style="color:#0ea5e9;text-decoration:none">⛷️ What pairs with spring skiing and long sunny days ???  Our most anticipated r...</a></td>
+        </tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Top Posts by Likes</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Caption</th>
+          <th style="text-align:center">Type</th>
+          <th style="text-align:right">Date</th>
+          <th style="text-align:right">Likes</th>
+          <th style="text-align:right">Comments</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="color:#94a3b8;width:24px">1</td>
+          <td style="max-width:320px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"><a href="https://www.instagram.com/p/DWFzmm6lOCW/" target="_blank" style="color:#0ea5e9;text-decoration:none">Just add oysters 🦪, caviar, crudo 🍣, chips, and a lobster roll 🦞…  Vin...</a></td>
+          <td style="text-align:center;color:#64748b;font-size:12px">Sidecar</td>
+          <td style="text-align:right;color:#94a3b8">2026-03-20</td>
+          <td style="text-align:right;font-weight:600">155</td>
+          <td style="text-align:right;color:#64748b">1</td>
+        </tr>
+        <tr>
+          <td style="color:#94a3b8;width:24px">2</td>
+          <td style="max-width:320px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"><a href="https://www.instagram.com/p/DV4pN0Jj9TB/" target="_blank" style="color:#0ea5e9;text-decoration:none">⛷️ What pairs with spring skiing and long sunny days ???  Our most ant...</a></td>
+          <td style="text-align:center;color:#64748b;font-size:12px">Video</td>
+          <td style="text-align:right;color:#94a3b8">2026-03-15</td>
+          <td style="text-align:right;font-weight:600">72</td>
+          <td style="text-align:right;color:#64748b">4</td>
+        </tr>
+        <tr>
+          <td style="color:#94a3b8;width:24px">3</td>
+          <td style="max-width:320px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"><a href="https://www.instagram.com/p/DWUmB7NElpB/" target="_blank" style="color:#0ea5e9;text-decoration:none">How to stay cool in St. Helena on an 81 degree day in March 🥵  1️⃣ Ord...</a></td>
+          <td style="text-align:center;color:#64748b;font-size:12px">Sidecar</td>
+          <td style="text-align:right;color:#94a3b8">2026-03-25</td>
+          <td style="text-align:right;font-weight:600">62</td>
+          <td style="text-align:right;color:#64748b">2</td>
+        </tr>
+        <tr>
+          <td style="color:#94a3b8;width:24px">4</td>
+          <td style="max-width:320px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"><a href="https://www.instagram.com/p/DV_toI7Cbjr/" target="_blank" style="color:#0ea5e9;text-decoration:none">It’s back ‼️ Our 2025 Vin Gris Rosé of Pinot Noir is available online ...</a></td>
+          <td style="text-align:center;color:#64748b;font-size:12px">Video</td>
+          <td style="text-align:right;color:#94a3b8">2026-03-17</td>
+          <td style="text-align:right;font-weight:600">60</td>
+          <td style="text-align:right;color:#64748b">3</td>
+        </tr>
+        <tr>
+          <td style="color:#94a3b8;width:24px">5</td>
+          <td style="max-width:320px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"><a href="https://www.instagram.com/p/DV12WqugXnj/" target="_blank" style="color:#0ea5e9;text-decoration:none">Scenes from last week’s Garden Opening Weekend 🪴  🧀 rosettes of cheese...</a></td>
+          <td style="text-align:center;color:#64748b;font-size:12px">Video</td>
+          <td style="text-align:right;color:#94a3b8">2026-03-13</td>
+          <td style="text-align:right;font-weight:600">54</td>
+          <td style="text-align:right;color:#64748b">1</td>
+        </tr></tbody>
+    </table>
+  </div>
+
+  <div style="color:#94a3b8;font-size:11px;text-align:center;margin-top:24px;padding-top:16px;border-top:1px solid #e2e8f0">
+    Generated by klaviyo_dashboard.py - March 31, 2026
+  </div>
+
+</div>
+</body>
+</html>
