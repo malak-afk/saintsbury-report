@@ -40,7 +40,30 @@
       <div class="subtitle">Klaviyo - Generated April 28, 2026</div>
     </div>
     <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
-      
+      <button id="refresh-btn" onclick="refreshDashboard()" style="background:#0f172a;color:white;border:none;border-radius:8px;padding:10px 16px;font-size:13px;font-weight:600;cursor:pointer">Refresh data</button><div id="refresh-status" style="color:#94a3b8;font-size:12px;text-align:right;min-height:14px"></div><script>
+async function refreshDashboard() {
+  const btn = document.getElementById('refresh-btn');
+  const status = document.getElementById('refresh-status');
+  btn.disabled = true; btn.style.opacity = '0.6'; btn.textContent = 'Refreshing...';
+  status.textContent = 'Triggering refresh - this takes about 3 minutes';
+  status.style.color = '#64748b';
+  try {
+    const resp = await fetch('https://saintsbury-dashboard.vercel.app/api/refresh', { method: 'POST', headers: {'X-Refresh-Key': '71006e7d16aab116f57344839552c4bfa80ca05e5e94228b'} });
+    if (resp.ok) {
+      status.textContent = 'Refresh started. Reload this page in ~3 minutes to see new data.';
+      status.style.color = '#16a34a';
+    } else {
+      status.textContent = 'Refresh failed - try again or contact Malak';
+      status.style.color = '#dc2626';
+      btn.disabled = false; btn.style.opacity = '1'; btn.textContent = 'Refresh data';
+    }
+  } catch (e) {
+    status.textContent = 'Network error - try again later';
+    status.style.color = '#dc2626';
+    btn.disabled = false; btn.style.opacity = '1'; btn.textContent = 'Refresh data';
+  }
+}
+</script>
       <div style="text-align:right;color:#94a3b8;font-size:12px">
         <div>9 campaigns tracked</div>
         <div>5 live flows</div>
@@ -849,7 +872,7 @@
   <div class="cards">
     <div class="card">
       <div class="card-label">Followers</div>
-      <div class="card-value">4,558</div>
+      <div class="card-value">4,556</div>
       <div class="card-sub">@saintsburywinery</div>
     </div>
     <div class="card">
@@ -885,7 +908,7 @@
     <div class="card">
       <div class="card-label">Posts / Week</div>
       <div class="card-value">0.5</div>
-      <div class="card-sub">1 Images / 1 Sidecars</div>
+      <div class="card-sub">1 Sidecars / 1 Images</div>
     </div>
   </div>
 
@@ -906,15 +929,6 @@
         </thead>
         <tbody>
         <tr>
-          <td style="color:#94a3b8">2026-04-04</td>
-          <td style="color:#64748b;font-size:12px">Image</td>
-          <td style="text-align:right;font-weight:600">38</td>
-          <td style="text-align:right">2</td>
-          <td style="text-align:right;color:#64748b">-</td>
-          <td style="text-align:right;color:#dc2626;font-weight:600">0.88%</td>
-          <td style="color:#64748b;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="The Matilija poppy 🍳 (Romneya coulteri), a spring highlight at Saintsbury.   Gar..."><a href="https://www.instagram.com/p/DWt8ZPfDlKY/" target="_blank" style="color:#0ea5e9;text-decoration:none">The Matilija poppy 🍳 (Romneya coulteri), a spring highlight at Saintsbury.   Gar...</a></td>
-        </tr>
-        <tr>
           <td style="color:#94a3b8">2026-04-06</td>
           <td style="color:#64748b;font-size:12px">Sidecar</td>
           <td style="text-align:right;font-weight:600">29</td>
@@ -922,6 +936,15 @@
           <td style="text-align:right;color:#64748b">-</td>
           <td style="text-align:right;color:#dc2626;font-weight:600">0.64%</td>
           <td style="color:#64748b;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="Did you miss Saintsbury’s Garden Party last month🪴?? Save these easy recipe card..."><a href="https://www.instagram.com/p/DWzT8dyATLO/" target="_blank" style="color:#0ea5e9;text-decoration:none">Did you miss Saintsbury’s Garden Party last month🪴?? Save these easy recipe card...</a></td>
+        </tr>
+        <tr>
+          <td style="color:#94a3b8">2026-04-04</td>
+          <td style="color:#64748b;font-size:12px">Image</td>
+          <td style="text-align:right;font-weight:600">38</td>
+          <td style="text-align:right">2</td>
+          <td style="text-align:right;color:#64748b">-</td>
+          <td style="text-align:right;color:#dc2626;font-weight:600">0.88%</td>
+          <td style="color:#64748b;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="The Matilija poppy 🍳 (Romneya coulteri), a spring highlight at Saintsbury.   Gar..."><a href="https://www.instagram.com/p/DWt8ZPfDlKY/" target="_blank" style="color:#0ea5e9;text-decoration:none">The Matilija poppy 🍳 (Romneya coulteri), a spring highlight at Saintsbury.   Gar...</a></td>
         </tr></tbody>
       </table>
     </div>
