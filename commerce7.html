@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Saintsbury — Commerce7 Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #fafaf7;
+    --card: #ffffff;
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --line: #e8e6e0;
+    --accent: #7a1f2b;
+  }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          background: var(--bg); color: var(--ink); }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 32px 24px 64px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 16px; margin-bottom: 32px; }
+  header h1 { margin: 0 0 4px; font-size: 28px; font-weight: 600; }
+  header .sub { color: var(--muted); font-size: 13px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px; margin-bottom: 32px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+           padding: 16px; }
+  .card .label { font-size: 12px; color: var(--muted); text-transform: uppercase;
+                  letter-spacing: 0.04em; }
+  .card .value { font-size: 24px; font-weight: 600; margin-top: 4px; }
+  .card .sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+             padding: 20px 20px 24px; margin-bottom: 24px; }
+  section h2 { margin: 0 0 16px; font-size: 16px; font-weight: 600; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media (max-width: 760px) { .grid2 { grid-template-columns: 1fr; } }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  th { font-weight: 600; color: var(--muted); font-size: 11px;
+        text-transform: uppercase; letter-spacing: 0.04em; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  th:nth-child(3), th:nth-child(4) { text-align: right; }
+  .chart-box { position: relative; height: 280px; }
+  footer { color: var(--muted); font-size: 12px; margin-top: 32px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Saintsbury — Commerce7 Dashboard</h1>
+  <div class="sub">Generated May 26, 2026 · last sync 2026-05-26 17:26:03 UTC · Tenant: saintsbury</div>
+</header>
+
+<section>
+  <h2>Headline</h2>
+  <div class="cards">
+    <div class="card"><div class="label">Total customers</div><div class="value">37,746</div>
+      <div class="sub">+289 new in 30 days</div></div>
+    <div class="card"><div class="label">Active (90d)</div><div class="value">2,021</div>
+      <div class="sub">unique buyers</div></div>
+    <div class="card"><div class="label">Active club members</div><div class="value">1,565</div>
+      <div class="sub">4.1% of customers</div></div>
+    <div class="card"><div class="label">Repeat rate</div><div class="value">33.3%</div>
+      <div class="sub">≥ 2 orders / ≥ 1 order</div></div>
+    <div class="card"><div class="label">Revenue · 30d</div><div class="value">$488,838</div>
+      <div class="sub">1,610 orders</div></div>
+    <div class="card"><div class="label">Revenue · 90d</div><div class="value">$806,571</div>
+      <div class="sub">3,004 orders</div></div>
+    <div class="card"><div class="label">Revenue · 12mo</div><div class="value">$3,028,067</div>
+      <div class="sub">10,613 orders</div></div>
+    <div class="card"><div class="label">AOV · 12mo</div><div class="value">$285</div>
+      <div class="sub">all-time $237</div></div>
+  </div>
+</section>
+
+<div class="grid2">
+  <section>
+    <h2>Revenue by channel (12mo)</h2>
+    <div class="chart-box"><canvas id="channelChart"></canvas></div>
+  </section>
+  <section>
+    <h2>New customers by month (12mo)</h2>
+    <div class="chart-box"><canvas id="monthChart"></canvas></div>
+  </section>
+</div>
+
+<section>
+  <h2>Orders &amp; revenue, last 90 days</h2>
+  <div class="chart-box" style="height: 320px;"><canvas id="dailyChart"></canvas></div>
+</section>
+
+<section>
+  <h2>Top 25 customers by lifetime value</h2>
+  <table>
+    <thead><tr>
+      <th>Name</th><th>Email</th><th>LTV</th><th>Orders</th><th>Last order</th><th>State</th><th>Club</th>
+    </tr></thead>
+    <tbody>
+<tr><td>Jeff Perille</td><td>jeff.perille@7brew.com</td><td class='num'>$54,138</td><td class='num'>2</td><td>2024-01-04</td><td>AR</td><td></td></tr>
+<tr><td>Ted Stack</td><td>tstack@falconllc.com</td><td class='num'>$48,962</td><td class='num'>54</td><td>2026-05-14</td><td>PA</td><td>Pinot Only Saintsbury</td></tr>
+<tr><td>Michael Henderson</td><td>henderson.mt@gmail.com</td><td class='num'>$48,165</td><td class='num'>138</td><td>2026-05-23</td><td>CA</td><td>Pinot Only Saintsbury 8 Bottles</td></tr>
+<tr><td>Emily Weaver</td><td>weaver_sf@hotmail.com</td><td class='num'>$47,585</td><td class='num'>127</td><td>2026-05-15</td><td>CA</td><td>Cellarbook</td></tr>
+<tr><td>Mary Huber</td><td>fryercreek@comcast.net</td><td class='num'>$46,090</td><td class='num'>108</td><td>2026-05-22</td><td>CA</td><td>Pinot Only Saintsbury 12 Bottle Ambassador</td></tr>
+<tr><td>Jim / Melissa Neidinger</td><td>jamesneidinger.1@gmail.com</td><td class='num'>$45,929</td><td class='num'>112</td><td>2026-05-21</td><td>TX</td><td>Cellarbook</td></tr>
+<tr><td>Gregory Herman</td><td>gregory@33sixty.com</td><td class='num'>$45,229</td><td class='num'>140</td><td>2026-05-17</td><td>CA</td><td>Saintsbury Legacy</td></tr>
+<tr><td>Kevin Lokay</td><td>kglokay@comcast.net</td><td class='num'>$42,915</td><td class='num'>82</td><td>2026-05-21</td><td>PA</td><td>Saintsbury 12 Bottle Ambassador</td></tr>
+<tr><td>Bruce T. Brown</td><td>bbrown@adeleknits.com</td><td class='num'>$42,558</td><td class='num'>63</td><td>2026-02-11</td><td>NC</td><td>Pinot Only Cellarbook</td></tr>
+<tr><td>David and Nancy Erickson</td><td>dnerickson@otelmail.com</td><td class='num'>$39,541</td><td class='num'>54</td><td>2026-05-21</td><td>IL</td><td>Saintsbury 12 Bottle Ambassador</td></tr>
+<tr><td>Patti Ward Palmer</td><td>pwp@petepalmer.com</td><td class='num'>$38,759</td><td class='num'>16</td><td>2023-11-20</td><td>CA</td><td></td></tr>
+<tr><td>Chad Achenbach</td><td>chad.achenbach@gmail.com</td><td class='num'>$37,712</td><td class='num'>101</td><td>2026-05-15</td><td>IL</td><td>Saintsbury</td></tr>
+<tr><td>Rich Geist</td><td>richgeist@comcast.net</td><td class='num'>$36,640</td><td class='num'>70</td><td>2026-05-14</td><td>CA</td><td>Pinot Only Cellarbook 12 Bottle</td></tr>
+<tr><td>Susan Bracken</td><td>brackensusie@gmail.com</td><td class='num'>$35,557</td><td class='num'>57</td><td>2026-03-14</td><td>FL</td><td>Cellarbook</td></tr>
+<tr><td>Shawn Curran</td><td>shawnpcurran@gmail.com</td><td class='num'>$33,917</td><td class='num'>111</td><td>2026-05-15</td><td>OH</td><td>Saintsbury</td></tr>
+<tr><td>Michele Blay</td><td>mblay415@gmail.com</td><td class='num'>$33,833</td><td class='num'>98</td><td>2025-10-14</td><td>CO</td><td>Saintsbury</td></tr>
+<tr><td>Bruce Schmidt</td><td>bruce.schmidt@compass-usa.com</td><td class='num'>$33,792</td><td class='num'>15</td><td>2016-07-01</td><td>CA</td><td></td></tr>
+<tr><td>Denise Dodini</td><td>ddodini53@gmail.com</td><td class='num'>$32,728</td><td class='num'>58</td><td>2026-03-06</td><td>CA</td><td>Cellarbook</td></tr>
+<tr><td>Justin Seger</td><td>justin.seger@gmail.com</td><td class='num'>$32,716</td><td class='num'>42</td><td>2026-05-15</td><td>MA</td><td>Saintsbury 8 Bottles</td></tr>
+<tr><td>Brad Stoll</td><td>bstoll241@sbcglobal.net</td><td class='num'>$31,459</td><td class='num'>141</td><td>2026-05-25</td><td>CA</td><td>Saintsbury Legacy</td></tr>
+<tr><td>Anthony Brookfield</td><td>tpbrookfield@gmail.com</td><td class='num'>$31,254</td><td class='num'>84</td><td>2026-03-10</td><td>WY</td><td></td></tr>
+<tr><td>Russell Clelland</td><td>llessur11@gmail.com</td><td class='num'>$30,796</td><td class='num'>55</td><td>2026-05-22</td><td>NC</td><td>Saintsbury Legacy</td></tr>
+<tr><td>Alexis Hocevar</td><td>alexis.hocevar@gmail.com</td><td class='num'>$28,600</td><td class='num'>63</td><td>2026-05-15</td><td>LA</td><td>Saintsbury 8 Bottles</td></tr>
+<tr><td>Amy Giovannucci</td><td>amy.giovannucci@gmail.com</td><td class='num'>$28,562</td><td class='num'>38</td><td>2026-05-15</td><td>VA</td><td>Saintsbury 8 Bottles</td></tr>
+<tr><td>Bret Madole</td><td>bretmadole@gmail.com</td><td class='num'>$28,465</td><td class='num'>38</td><td>2026-05-15</td><td>TX</td><td>Saintsbury 12 Bottle Ambassador</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<div class="grid2">
+  <section>
+    <h2>Top 10 US states by revenue</h2>
+    <table>
+      <thead><tr><th>State</th><th>Customers</th><th>Revenue (LTV)</th></tr></thead>
+      <tbody>
+<tr><td>CA</td><td class='num'>4,504</td><td class='num'>$7,937,182</td></tr>
+<tr><td>TX</td><td class='num'>1,018</td><td class='num'>$1,646,615</td></tr>
+<tr><td>IL</td><td class='num'>681</td><td class='num'>$1,104,026</td></tr>
+<tr><td>FL</td><td class='num'>643</td><td class='num'>$1,050,111</td></tr>
+<tr><td>NY</td><td class='num'>731</td><td class='num'>$842,983</td></tr>
+<tr><td>OH</td><td class='num'>366</td><td class='num'>$703,197</td></tr>
+<tr><td>NC</td><td class='num'>479</td><td class='num'>$691,177</td></tr>
+<tr><td>CO</td><td class='num'>406</td><td class='num'>$629,594</td></tr>
+<tr><td>PA</td><td class='num'>357</td><td class='num'>$623,151</td></tr>
+<tr><td>NJ</td><td class='num'>396</td><td class='num'>$595,447</td></tr>
+      </tbody>
+    </table>
+  </section>
+  <section>
+    <h2>State revenue mix</h2>
+    <div class="chart-box"><canvas id="geoChart"></canvas></div>
+  </section>
+</div>
+
+<footer>
+  Source: Commerce7 REST API · 115,812 paid orders, all-time revenue $27,437,783
+</footer>
+
+</div>
+
+<script>
+const ACCENT = '#7a1f2b';
+const ACCENT2 = '#c9a45c';
+const GRID = '#e8e6e0';
+
+new Chart(document.getElementById('channelChart'), {
+  type: 'bar',
+  data: {
+    labels: ["Club", "POS", "Inbound", "Web"],
+    datasets: [{ label: 'Revenue', data: [1490285.66, 911844.41, 500990.57, 124946.47], backgroundColor: ACCENT }]
+  },
+  options: { plugins: { legend: { display: false } },
+             scales: { y: { ticks: { callback: v => '$' + v.toLocaleString() } } } }
+});
+
+new Chart(document.getElementById('monthChart'), {
+  type: 'bar',
+  data: {
+    labels: ["2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04", "2026-05"],
+    datasets: [{ label: 'New customers', data: [45, 259, 251, 249, 367, 293, 392, 188, 187, 171, 305, 294, 229], backgroundColor: ACCENT2 }]
+  },
+  options: { plugins: { legend: { display: false } } }
+});
+
+new Chart(document.getElementById('dailyChart'), {
+  type: 'line',
+  data: {
+    labels: ["2026-02-25", "2026-02-26", "2026-02-27", "2026-02-28", "2026-03-01", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-07", "2026-03-08", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-14", "2026-03-15", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-21", "2026-03-22", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27", "2026-03-28", "2026-03-29", "2026-03-30", "2026-03-31", "2026-04-01", "2026-04-02", "2026-04-03", "2026-04-04", "2026-04-05", "2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-11", "2026-04-12", "2026-04-13", "2026-04-14", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-18", "2026-04-19", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-25", "2026-04-26", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-09", "2026-05-10", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-16", "2026-05-17", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-23", "2026-05-24", "2026-05-25", "2026-05-26"],
+    datasets: [
+      { label: 'Revenue', data: [784.33, 302.54, 3113.93, 3523.0499999999997, 4634.27, 2181.46, 1846.92, 4034.59, 1975.5, 13342.51, 6704.889999999999, 9635.42, 8788.17, 4213.63, 2037.96, 5030.1, 2688.79, 8004.76, 6115.66, 3146.77, 16994.03, 15866.69, 9820.78, 9936.98, 9037.69, 8202.93, 4731.15, 2140.86, 5381.98, 3983.73, 4531.97, 6440.68, 4506.68, 1451.65, 3988.4799999999996, 1658.56, 3238.65, 2518.88, 5413.32, 2515.8500000000004, 5494.72, 5364.11, 1728.82, 5645.02, 4120.09, 4459.84, 3502.6, 5274.15, 769.15, 4854.0199999999995, 11559.39, 6694.0199999999995, 11427.44, 3035.4, 3408.43, 3451.79, 7225.62, 4811.14, 4143.2300000000005, 4561.29, 3665.4, 6389.41, 1513.9, 2981.23, 9671.67, 8515.63, 10765.26, 5339.45, 9164.07, 3610.52, 3698.83, 2995.0, 3643.7000000000003, 5468.55, 4387.19, 2422.4700000000003, 2402.65, 6796.47, 49902.92, 289147.1, 5635.87, 4994.32, 6068.64, 4599.3, 7116.23, 4645.62, 6361.49, 5759.29, 6527.88, 4505.99, 1878.06], borderColor: ACCENT, backgroundColor: 'transparent',
+         yAxisID: 'y', tension: 0.25, pointRadius: 0 },
+      { label: 'Orders', data: [6, 12, 16, 22, 23, 16, 9, 52, 18, 36, 41, 48, 30, 12, 13, 17, 12, 19, 28, 14, 53, 51, 40, 29, 45, 27, 17, 10, 32, 18, 23, 24, 25, 15, 13, 10, 13, 9, 21, 16, 24, 29, 16, 27, 23, 18, 17, 32, 13, 49, 29, 32, 42, 13, 13, 13, 17, 7, 17, 22, 15, 19, 7, 8, 23, 27, 30, 24, 19, 11, 22, 11, 29, 25, 21, 9, 12, 31, 178, 840, 29, 26, 23, 16, 26, 21, 20, 31, 40, 20, 3], borderColor: ACCENT2, backgroundColor: 'transparent',
+         yAxisID: 'y1', tension: 0.25, pointRadius: 0 }
+    ]
+  },
+  options: {
+    interaction: { mode: 'index', intersect: false },
+    scales: {
+      y: { position: 'left', ticks: { callback: v => '$' + v.toLocaleString() } },
+      y1: { position: 'right', grid: { display: false } }
+    }
+  }
+});
+
+new Chart(document.getElementById('geoChart'), {
+  type: 'bar',
+  data: {
+    labels: ["CA", "TX", "IL", "FL", "NY", "OH", "NC", "CO", "PA", "NJ"],
+    datasets: [
+      { label: 'Revenue', data: [7937181.72, 1646614.6300000001, 1104025.79, 1050110.95, 842983.16, 703196.62, 691177.08, 629593.68, 623151.03, 595447.21], backgroundColor: ACCENT, yAxisID: 'y' },
+      { label: 'Customers', data: [4504, 1018, 681, 643, 731, 366, 479, 406, 357, 396], backgroundColor: ACCENT2, yAxisID: 'y1' }
+    ]
+  },
+  options: {
+    scales: {
+      y: { position: 'left', ticks: { callback: v => '$' + v.toLocaleString() } },
+      y1: { position: 'right', grid: { display: false } }
+    }
+  }
+});
+</script>
+</body>
+</html>
